@@ -10,7 +10,7 @@ config = {
   // When running Ghost in the wild, use the production environment
   // Configure your URL and mail settings here
   production: {
-    url: 'http://docgecko.com',
+    url: process.env.BLOG_URL,
 
     mail: {
       transport: 'SMTP',
