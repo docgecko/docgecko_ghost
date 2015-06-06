@@ -74,7 +74,7 @@ config = {
     database: {
       client: 'sqlite3',
       connection: {
-        filename: path.join(process.env.GHOST_CONTENT, '/data/ghost-dev.db')
+        filename: path.join(__dirname, '/data/ghost-dev.db')
       },
       debug: false
     },
@@ -85,7 +85,7 @@ config = {
       port: '2368'
     },
     paths: {
-      contentPath: path.join(process.env.GHOST_CONTENT, '/')
+      contentPath: path.join(__dirname, '/')
     }
   },
 
@@ -99,7 +99,7 @@ config = {
     database: {
       client: 'sqlite3',
       connection: {
-        filename: path.join(process.env.GHOST_CONTENT, '/data/ghost-test.db')
+        filename: path.join(__dirname, '/data/ghost-test.db')
       }
     },
     server: {
