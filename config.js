@@ -11,7 +11,6 @@ config = {
   // Configure your URL and mail settings here
   production: {
     url: process.env.BLOG_URL,
-
     mail: {
       transport: 'SMTP',
       options: {
@@ -22,18 +21,6 @@ config = {
         }
       }
     },
-
-    storage: {
-      active: 'ghost-s3',
-      'ghost-s3': {
-        accessKeyId: process.env.AWS_ACCESS_ID,
-        secretAccessKey: process.env.AWS_ACCESS_SECRET,
-        bucket: process.env.AWS_BUCKET_NAME,
-        region: process.env.AWS_BUCKET_REGION,
-        assetHost: 's3 bucket url'
-      }
-    },
-
     database: {
       client: 'postgres',
       connection: {
@@ -45,7 +32,16 @@ config = {
       },
       debug: false
     },
-
+    storage: {
+      active: 'ghost-s3',
+      'ghost-s3': {
+        accessKeyId: process.env.AWS_ACCESS_ID,
+        secretAccessKey: process.env.AWS_ACCESS_SECRET,
+        bucket: process.env.AWS_BUCKET_NAME,
+        region: process.env.AWS_BUCKET_REGION,
+        assetHost: 'https://docgecko.s3-eu-west-1.amazonaws.com/'
+      }
+    },
     server: {
       // Host to be passed to node's `net.Server#listen()`
       host: '0.0.0.0',
@@ -57,6 +53,7 @@ config = {
   // ### Development **(default)**
   development: {
     // The url to use when providing links to the site, E.g. in RSS and email.
+    // Change this to your Ghost blogs published URL.
     url: 'http://localhost:2368',
 
     mail: {
@@ -69,14 +66,22 @@ config = {
         }
       }
     },
-
-
     database: {
       client: 'sqlite3',
       connection: {
-        filename: path.join(__dirname, '/data/ghost-dev.db')
+        filename: path.join(__dirname, '/content/data/ghost-dev.db')
       },
       debug: false
+    },
+    storage: {
+      active: 'ghost-s3',
+      'ghost-s3': {
+        accessKeyId: process.env.AWS_ACCESS_ID,
+        secretAccessKey: process.env.AWS_ACCESS_SECRET,
+        bucket: process.env.AWS_BUCKET_NAME,
+        region: process.env.AWS_BUCKET_REGION,
+        assetHost: 'https://docgecko.s3-eu-west-1.amazonaws.com/'
+      }
     },
     server: {
       // Host to be passed to node's `net.Server#listen()`
@@ -85,7 +90,7 @@ config = {
       port: '2368'
     },
     paths: {
-      contentPath: path.join(__dirname, '/')
+      contentPath: path.join(__dirname, '/content/')
     }
   },
 
@@ -99,7 +104,7 @@ config = {
     database: {
       client: 'sqlite3',
       connection: {
-        filename: path.join(__dirname, '/data/ghost-test.db')
+        filename: path.join(__dirname, '/content/data/ghost-test.db')
       }
     },
     server: {
