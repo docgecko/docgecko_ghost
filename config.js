@@ -39,7 +39,7 @@ config = {
         secretAccessKey: process.env.AWS_ACCESS_SECRET,
         bucket: process.env.AWS_BUCKET_NAME,
         region: process.env.AWS_BUCKET_REGION,
-        assetHost: 'https://docgecko.s3-eu-west-1.amazonaws.com/'
+        assetHost: process.env.AWS_ASSET_HOST
       }
     },
     server: {
