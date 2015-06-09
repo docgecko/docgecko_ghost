@@ -897,7 +897,7 @@ body.nav-opened .nav {
   letter-spacing: 0.01rem;
   color: rgba(255, 255, 255, 0.8);
   /*color: #000000;*/
-  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 html.ie7 .page-description, html.ie8 .page-description, html.ie9 .page-description {
   background-color: white;
