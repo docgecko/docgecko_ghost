@@ -16,8 +16,8 @@ config = {
       options: {
         service: 'Mailgun',
         auth: {
-          user: 'postmaster@sandboxc8fad21c3978411ea2eec7c5e10fec25.mailgun.org', // mailgun username
-          pass: 'a6df43e42238fae7e0abbdedf07f05fa' // mailgun password
+          user: process.env.MAILGUN_USER, // mailgun username
+          pass: process.env.MAILGUN_PASS // mailgun password
         }
       }
     },
@@ -28,7 +28,7 @@ config = {
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DATABASE,
-        port: '5432'
+        port: process.env.POSTGRES_PORT
       },
       debug: false
     },
@@ -61,8 +61,8 @@ config = {
       options: {
         service: 'Mailgun',
         auth: {
-          user: 'postmaster@sandboxc8fad21c3978411ea2eec7c5e10fec25.mailgun.org', // mailgun username
-          pass: 'a6df43e42238fae7e0abbdedf07f05fa' // mailgun password
+          user: process.env.MAILGUN_USER, // mailgun username
+          pass: process.env.MAILGUN_PASS // mailgun password
         }
       }
     },
@@ -80,7 +80,7 @@ config = {
         secretAccessKey: process.env.AWS_ACCESS_SECRET,
         bucket: process.env.AWS_BUCKET_NAME,
         region: process.env.AWS_BUCKET_REGION,
-        assetHost: 'https://docgecko.s3-eu-west-1.amazonaws.com/'
+        assetHost: process.env.AWS_ASSET_HOST
       }
     },
     server: {
