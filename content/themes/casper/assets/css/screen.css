@@ -887,6 +887,7 @@ body.nav-opened .nav {
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   color: #fff;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 .page-description {
   margin: 0;
@@ -896,10 +897,9 @@ body.nav-opened .nav {
   font-family: "Merriweather", serif;
   letter-spacing: 0.01rem;
   color: rgba(255, 255, 255, 0.8);
-  /*color: #000000;*/
   text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
-html.ie7 .page-description, html.ie8 .page-description, html.ie9 .page-description {
+html.ie7 .page-description, html.ie8 .page-description, html.ie9 .page-description, html.ie7 .page-title, html.ie8 .page-title, html.ie9 .page-title {
   background-color: white;
   filter: progid: DXImageTransform.Microsoft.Chroma(color='white') progid: DXImageTransform.Microsoft.Alpha(opacity=100) progid: DXImageTransform.Microsoft.dropshadow(color=#ffffff, offX=1, offY=1) progid: DXImageTransform.Microsoft.dropshadow(color=#ffffff, offX=-1, offY=1) progid: DXImageTransform.Microsoft.dropshadow(color=#ffffff, offX=1, offY=-1) progid: DXImageTransform.Microsoft.dropshadow(color=#ffffff, offX=-1, offY=-1);
   zoom: 1;
